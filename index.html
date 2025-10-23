@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AsokanRathi Coconut Farm</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0fdf4;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #fbf8f6f2;
+      transprancy: 20px;
+      padding: 5px 10px;
+      box-shadow: 0 3px 6px rgba(10,10,10,10);
+      position: static;
+      top: 0;
+      height: 120px;
+      z-index: 999;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: normal;
+      font-weight: 600;
+      font-size: 1.4rem;
+      text-align: center;
+      color: #c7fc5e !important;
+    }
+
+    /* Logo bigger than navbar */
+    .navbar-brand img {
+      width: 130px;
+      height: 130px;
+      left: 20%;
+      margin-top: 0cap; /* floating above navbar */
+      border-radius: 50%;
+      border: 3px solid #d3afaf;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(212, 18, 18, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .navbar-brand img:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-link {
+      color: #d3a117 !important;
+      font-weight: 500;
+      margin-left: 20px;
+      transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: #434e9f !important;
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://images.pexels.com/photos/15114317/pexels-photo-15114317/free-photo-of-green-coconut-trees-under-cloudy-sky.jpeg') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: white;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.35);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-top: 15px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    }
+
+    .hero .btn {
+      margin-top: 20px;
+      border-radius: 30px;
+      padding: 12px 30px;
+      font-weight: 600;
+      transition: transform 0.3s ease;
+    }
+
+    .hero .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    @keyframes fadeInUp {
+      from {opacity:0; transform: translateY(50px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+
+    /* Product Section */
+    .product-card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      background-color: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.2);
+    }
+
+    .product-card img {
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card img:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card h5 {
+      color: #2e7d32;
+      font-weight: 600;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background-color: #e8f5e9;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .contact-section .btn {
+      font-size: 1.2rem;
+      margin: 10px;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .contact-section .btn:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+
+    .btn-call {
+      background-color: #2e7d32;
+      color: #fff;
+      border: none;
+    }
+
+    .btn-whatsapp {
+      background-color: #25d366;
+      color: #fff;
+      border: none;
+    }
+
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      border-top: 3px solid #c8e6c9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#" text-align="center">
+        <img src="pencilepic.jpg" alt="Farm Logo">
+                <br>AsokanRathi Coconut Farm
+      </a>
+      <div class="ms-auto d-flex">
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Coconut Garden</h1>
+      <p>Pure • Fresh • Naturally Grown</p>
+      <a href="#products" class="btn btn-light">Explore Our Products</a>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold text-success mb-4">Our Natural Products</h2>
+      <p class="text-muted mb-5">Straight from our farm — grown with love and care 🌿</p>
+        <p>“Nestled amidst the serene coconut groves, AsokanRathi Coconut Farm is committed to bringing you the freshest farm produce. Our coconuts are naturally grown, our goats are healthy and naturally fed, and our hens are free-range, producing organic eggs every day. We believe in sustainable farming practices, nurturing nature, and serving you only the best.”</p>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card product-card shadow-sm">
+            <img src="https://5.imimg.com/data5/IOS/Default/2021/4/CT/LK/JM/118762574/product-jpeg-1000x1000.png" alt="Tender Coconut">
+            <div class="card-body">
+              <h5>Tender Coconut</h5>
+              <p>Refreshing and sweet tender coconuts to keep you cool and hydrated naturally.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card product-card shadow-sm">
+            <img src="https://kingagroproducts.com/wp-content/uploads/2018/01/Dry-Coconut-or-Coconut-Copra.jpg" alt="Dry Coconut">
+            <div class="card-body">
+              <h5>Dry Coconut</h5>
+              <p>Rich dry coconuts perfect for cooking, oil extraction, and traditional uses.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card product-card shadow-sm">
+            <img src="https://www.greentomatomarket.com/cdn/shop/files/Lycheeproductshop_3.png?v=1716483684&width=480" alt="Fresh Coconut">
+            <div class="card-body">
+              <h5>Fresh Coconut</h5>
+              <p>Farm-fresh coconuts filled with natural water and soft pulp, ideal for temples and households.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card product-card shadow-sm">
+            <img src="https://pixie.co.in/wp-content/uploads/2022/10/Bizzare-Police-arrest-goat-for-trespassing-on-judges-garden-Edited.png" alt="Goat">
+            <div class="card-body">
+              <h5>Goats</h5>
+              <p>Healthy and naturally fed goats raised in our garden with proper care and environment.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card product-card shadow-sm">
+            <img src="https://thumbs.dreamstime.com/b/group-hens-13674413.jpg" alt="Hens">
+            <div class="card-body">
+              <h5>Hens</h5>
+              <p>Free-range hens providing fresh and organic eggs every day from our natural farm.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h3 class="fw-bold text-success mb-3">Contact Us</h3>
+      <p class="mb-4">We’d love to serve you our best farm products. Contact us below 🌴</p>
+      <a href="tel:+917708075854" class="btn btn-call mx-2"><i class="bi bi-telephone"></i> Call Us</a>
+      <a href="https://wa.me/919080385770?text=Hello!%20I’m%20interested%20in%20your%20farm%20products." target="_blank" class="btn btn-whatsapp mx-2"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Coconut Garden | Designed by Vinitha 🌿</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
